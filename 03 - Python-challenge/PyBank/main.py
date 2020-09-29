@@ -8,66 +8,88 @@ import csv
 cwd = os.getcwd()
 budget_data_filepath = os.path.join(cwd, "Resources", "budget_data.csv")
 
+#Start Financial Analysis
+print('')
+print('Financial Analysis')
+print("---------------------------------------------------")
+
+
 with open(budget_data_filepath) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=",")
-                                #reader = csv.DictReader(budget_data)
-                                #for row in reader:
-                                #print(row)
 
-                                # Read the header row first 
-                                #header = next(csv_reader)
-                                #print(header)
-                                #print(budget_data)
-    #budget_data = [word for word in [row for row in csv_reader]]
-                                #print(data)
-                                #print(data[0])
-                                #print(data[0][1])
-                                #print(data[1][1])
-                                #total = int(budget_data[0][1]) + int(budget_data[1][1])
-                                #print(total)    
-
+    budget_data = [word for word in [row for row in csv_reader]]
+                                  
     # Convert profit/loss column to integers
     for row in budget_data[1:]:         #loop through each row in budget_data starting with row 2 (index 1) since row 1 (index 0) is the header row 
         pl_range = row[1]               #profit/losses range is found in column 2 (index 1)
         pl_range = int(pl_range)        #convert each range number from a string to an integer so that i can perform calculatons on them later
         row[1] = pl_range               #assign range, which is now an integer, bact to indext 1 in each row
-                                        #print(budget_data) to view updated budget_data set
+                                        #note: print(budget_data) to view updated budget_data set
 
      # Calculate total number of month records included in the dataset
     for row in budget_data:
-        number_of_months = len(budget_data)
+        number_of_months = len(budget_data)-1
     
     print(f'Total Months: {number_of_months}')
 
     # Calculate net total amount of "Profit/Losses" over the entire period
+    
     pl_net_total = 0
     for row in budget_data[1:]:
         pl_range = row[1]
         pl_net_total += pl_range
-
+  
     print(f'Total: ${pl_net_total}')
 
-    # Calculate the average of the changes in "Profit/Losses" over the entire period
     
-    while len(budget_data) <= number_of_months:
-        budget_data.append
-        #change_total = 0
-        #for row in budget_data[1:]:
-            #p1_range = row[1]
+    
+    prior_month_pl = [867884]                                    #create a list to store prior month profit/loss
+    change_list = []                                             #create a list to store monthly change results
+    x = 1
+    total_change = 0
 
-            #pl_net_total += pl_range
+    # Calculate the average of the changes in "Profit/Losses" over the entire period
+    for row in budget_data[1:]:
+        pl_current_month = row[1]
+        pl_prior_month = prior_month_pl[(x-1)]
+        
+        change = pl_current_month - pl_prior_month
+        total_change += change
+        
+        prior_month_pl.append(pl_current_month)                 #append value to prior_month_pl list      
+        change_list.append(change)                              #append value to change_list to be referenced for greatest increase and greatest decrease questions following
+        x = x + 1 
 
-            #print(f'Total: ${pl_net_total}')
-
-
-                                    #average = pl_net_total / number_of_months
-                                    #print(f'Average Change: ${average}')
+        average_change = total_change / (number_of_months-1)
+    
+    print(f'Average Change: ${round(average_change,2)}')    
 
     # Calculate the greatest increase in profits (data and amount) over the entire period
+    greatest_increase = max(change_list)
+    r_index = change_list.index(greatest_increase)
+    corresponding_month = budget_data[(r_index+1)][0]
     
-
-    print(f'Greatest Increase in Profits: TBD')
+    print(f'Greatest Increase in Profits: {corresponding_month} $({greatest_increase})')
 
     # Calculate the greatest decrease in losses (data and amount) over the entire period
+    greatest_decrease = min(change_list)
+    r_index = change_list.index(greatest_decrease)
+    corresponding_month = budget_data[(r_index+1)][0]
 
-    print(f'Greatest Decrease in Profits: TBD')
+    print(f'Greatest Increase in Profits: {corresponding_month} $({greatest_decrease})')
+    
+    # Export results to a text file
+
+      #  output_path = os.path.join("..", "output", "pyBank_results.txt")    # Specify the file to write to
+
+    # Open the file using "write" mode. Specify the variable to hold the contents
+      #  with open(output_path, 'w') as txtfile:
+
+        # Initialize csv.writer
+       # csvwriter = csv.writer(csvfile, delimiter=',')
+
+         # Write the first row (column headers)
+        #    csvwriter.writerow(['First Name', 'Last Name', 'SSN'])
+
+            # Write the second row
+         #    csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])
