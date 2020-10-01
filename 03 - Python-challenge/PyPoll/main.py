@@ -74,17 +74,28 @@ winner = unique_candidates_list[winner_index]
 
 
 # Print complete list of candidates who received votes
-print(f'Khan: {pct_votes_Khan}% ({votes_4_Khan})')
-print(f'Correy: {pct_votes_Correy}% ({votes_4_Correy})')
-print(f'Li: {pct_votes_Li}% ({votes_4_Li})')
-print(f"O'Tooley: {pct_votes_Otooley}% ({votes_4_Otooley})")
+print(f'Khan: {"%.3f"%pct_votes_Khan}% ({votes_4_Khan})')
+print(f'Correy: {"%.3f"%pct_votes_Correy}% ({votes_4_Correy})')
+print(f'Li: {"%.3f"%pct_votes_Li}% ({votes_4_Li})')
+print(f"O'Tooley: {'%.3f'%pct_votes_Otooley}% ({votes_4_Otooley})")
 print("---------------------------------------------------")
 print(f'Winner: {winner}')
 print("---------------------------------------------------")
 
 # Zip the lists together
-result = zip(unique_candidates_list, votes_list, percent_list)
-
-
+#result = zip(unique_candidates_list, votes_list, percent_list)
 
 # Export text file with the results
+
+output_path = os.path.join(cwd, "Resources", "results.txt")
+
+with open(output_path, 'w') as txtfile:
+    txtfile.write("Election Results\n")
+    txtfile.write("---------------------------------------------------\n")
+    txtfile.write(f'Khan: {"%.3f"%pct_votes_Khan}% ({votes_4_Khan})\n')
+    txtfile.write(f'Correy: {"%.3f"%pct_votes_Correy}% ({votes_4_Correy})\n')
+    txtfile.write(f'Li: {"%.3f"%pct_votes_Li}% ({votes_4_Li})\n')
+    txtfile.write(f"O'Tooley: {'%.3f'%pct_votes_Otooley}% ({votes_4_Otooley})\n")
+    txtfile.write("---------------------------------------------------\n")
+    txtfile.write(f'Winner: {winner}\n') 
+    txtfile.write("---------------------------------------------------\n")
