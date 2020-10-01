@@ -41,8 +41,6 @@ with open(budget_data_filepath) as csv_file:
   
     print(f'Total: ${pl_net_total}')
 
-    
-    
     prior_month_pl = [867884]                                    #create a list to store prior month profit/loss
     change_list = []                                             #create a list to store monthly change results
     x = 1
@@ -60,9 +58,9 @@ with open(budget_data_filepath) as csv_file:
         change_list.append(change)                              #append value to change_list to be referenced for greatest increase and greatest decrease questions following
         x = x + 1 
 
-        average_change = total_change / (number_of_months-1)
-    
-    print(f'Average Change: ${round(average_change,2)}')    
+    average_change = total_change / (number_of_months-1)
+
+    print(f'Average Change: ${"%.2f"%average_change}')    
 
     # Calculate the greatest increase in profits (data and amount) over the entire period
     greatest_increase = max(change_list)
@@ -76,20 +74,23 @@ with open(budget_data_filepath) as csv_file:
     r_index = change_list.index(greatest_decrease)
     corresponding_month = budget_data[(r_index+1)][0]
 
-    print(f'Greatest Increase in Profits: {corresponding_month} $({greatest_decrease})')
+    print(f'Greatest Decrease in Profits: {corresponding_month} $({greatest_decrease})')
     
     # Export results to a text file
+   
+    output_path = os.path.join(cwd, "Resources", "results.txt")
 
-      #  output_path = os.path.join("..", "output", "pyBank_results.txt")    # Specify the file to write to
+    with open(output_path, 'w') as txtfile:
+        txtfile.write('')
+        txtfile.write('Financial Analysis')
+        txtfile.write("---------------------------------------------------")
+        txtfile.write(f'Total Months: {number_of_months}')
+        txtfile.write(f'Total: ${pl_net_total}')
+        txtfile.write(f'Average Change: ${"%.2f"%average_change}') 
+        txtfile.write(f'Greatest Increase in Profits: {corresponding_month} $({greatest_increase})') 
+        txtfile.write(f'Greatest Decrease in Profits: {corresponding_month} $({greatest_decrease})')  
+        txtfile.write(f'Greatest Increase in Profits: {corresponding_month} $({greatest_decrease})')
 
-    # Open the file using "write" mode. Specify the variable to hold the contents
-      #  with open(output_path, 'w') as txtfile:
+  
 
-        # Initialize csv.writer
-       # csvwriter = csv.writer(csvfile, delimiter=',')
-
-         # Write the first row (column headers)
-        #    csvwriter.writerow(['First Name', 'Last Name', 'SSN'])
-
-            # Write the second row
-         #    csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])
+      
