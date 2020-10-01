@@ -81,15 +81,15 @@ with open(budget_data_filepath) as csv_file:
     output_path = os.path.join(cwd, "Resources", "results.txt")
 
     with open(output_path, 'w') as txtfile:
-        txtfile.write('')
-        txtfile.write('Financial Analysis')
-        txtfile.write("---------------------------------------------------")
-        txtfile.write(f'Total Months: {number_of_months}')
-        txtfile.write(f'Total: ${pl_net_total}')
-        txtfile.write(f'Average Change: ${"%.2f"%average_change}') 
-        txtfile.write(f'Greatest Increase in Profits: {corresponding_month} $({greatest_increase})') 
-        txtfile.write(f'Greatest Decrease in Profits: {corresponding_month} $({greatest_decrease})')  
-        txtfile.write(f'Greatest Increase in Profits: {corresponding_month} $({greatest_decrease})')
+        txtfile.write('\n')
+        txtfile.write('Financial Analysis\n')
+        txtfile.write("---------------------------------------------------\n")
+        txtfile.write(f'Total Months: {number_of_months}\n')
+        txtfile.write(f'Total: ${pl_net_total}\n')
+        txtfile.write(f'Average Change: ${"%.2f"%average_change}\n') 
+        txtfile.write(f'Greatest Increase in Profits: {corresponding_month} $({greatest_increase})\n') 
+        txtfile.write(f'Greatest Decrease in Profits: {corresponding_month} $({greatest_decrease})\n')  
+        txtfile.write(f'Greatest Increase in Profits: {corresponding_month} $({greatest_decrease})\n')
 
   
 
