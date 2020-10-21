@@ -20,7 +20,7 @@
 3. **Observation #3**:  There is no visible correlation between latitude with either wind speed or cloudiness.  A third variable may need to be considered to determine correlation such as longitude.
 
 #### 3. *Noteworthy*
-- I was unable to retrieve my API keys consistently when my config file resided anywhere outside of the folders the respective jupyter notebooks were.  Hence you will see the presence of the config file in both the WeatherPy and VacationPy folders.
+- I was unable to retrieve my API keys consistently when my config file resided anywhere outside of the folders the respective jupyter notebooks were.  Although config file is now removed, they were called from the same folder as the respective jupyter notebooks.
 - There exists some miscellaneous checkpoint and cache file folders in both WeatherPy and VacationPy folders.  Please ignore, next time I will implement GIT ignore so the files don't get pushed to this main repository.
 - Did not have opportunity to consider the full range of latitudes when I was retrieving the city data from the API to minimize bias in my dataset.  Assuming I would define some lat and lon ranges and ensure I get equal city records in each section when I run my for loop. Also was unable to date stamp the outputted files and the chart title (dynamically?). Next time...
 
