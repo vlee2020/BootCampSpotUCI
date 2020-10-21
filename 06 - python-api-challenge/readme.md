@@ -10,7 +10,7 @@
 1. **Output**: All png and csv output files can be found here.  
 - WeatherPy scatter and linear regression charts all outputted individually as png files here.  
 - Multiple csv files of the retrieved data at various points in time outputted here as well. 
-- Heatmap png stored here as well titled: my_ideal_vacation_heatmap.png <br> </p>
+- Heatmap png stored here as well titled: my_ideal_vacation_heatmap.png
 2. **WeatherPy**: WeatherPy.ipynb and config file stored here.
 3. **VacationPy**: VacationPy.ipynb and config file stored here.
 
