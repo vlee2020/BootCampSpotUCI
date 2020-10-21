@@ -7,12 +7,12 @@
 
 
 #### 1. *Folder Structure*:
-**Output**: All png and csv output files can be found here.  
-1. WeatherPy scatter and linear regression charts all outputted individually as png files here.  
-2. Multiple csv files of the retrieved data at various points in time outputted here as well. 
-3. Heatmap png stored here as well titled: my_ideal_vacation_heatmap.png
-**WeatherPy**: WeatherPy.ipynb and config file stored here. <br>
-**VacationPy**: VacationPy.ipynb and config file stored here. <br>
+1. **Output**: All png and csv output files can be found here.  
+- WeatherPy scatter and linear regression charts all outputted individually as png files here.  
+- Multiple csv files of the retrieved data at various points in time outputted here as well. 
+- Heatmap png stored here as well titled: my_ideal_vacation_heatmap.png <br> </p>
+2. **WeatherPy**: WeatherPy.ipynb and config file stored here.
+3. **VacationPy**: VacationPy.ipynb and config file stored here.
 
 #### 2. *WeatherPy Observations*
 1. **Observation #1**: There is a visible correlation between Temperature and Latitude further supported with a moderate linear regression r-value.  Temperature increases as we approach the equater and decreaes as we move away from the equator to the North Pole and South Pole.
