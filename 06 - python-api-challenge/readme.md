@@ -22,6 +22,6 @@
 #### 3. *Noteworthy*
 - I was unable to retrieve my API keys consistently when my config file resided anywhere outside of the folders the respective jupyter notebooks were.  Hence you will see the presence of the config file in both the WeatherPy and VacationPy folders.
 - There exists some miscellaneous checkpoint and cache file folders in both WeatherPy and VacationPy folders.  Please ignore, next time I will implement GIT ignore so the files don't get pushed to this main repository.
-- Did not have opportunity to consider the full range of latitudes when I was retrieving the city data from the API to minimize bias in my dataset.  Assuming I would define some lat and lon ranges and ensure I get equal city records in each section when I run my for loop.  Next time...
+- Did not have opportunity to consider the full range of latitudes when I was retrieving the city data from the API to minimize bias in my dataset.  Assuming I would define some lat and lon ranges and ensure I get equal city records in each section when I run my for loop. Also was unable to date stamp the outputted files and the chart title (dynamically?). Next time...
 
 
