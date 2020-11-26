@@ -1,0 +1,121 @@
+/* Body */
+body{
+    background-color: #EDEDED; 
+  }
+  /* Navbar */
+  .navbar{
+    max-height: 57px; 
+    background-color: white; 
+    font-size: 15px; 
+  }
+  .nav_bar{
+    font-weight: bold;
+    margin-left: 30px; 
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    background-color: #0BADA6;
+    font-family: Georgia, Times, serif;
+  }
+
+  .navbar-brand{
+    background-color: #0BADA6;
+    padding: 10px;
+
+  }
+
+  .navbar-brand:hover{
+    color: rgb(175, 175, 175) !important;
+  }
+
+  .navbar-toggler{
+    background-color:#0BADA6;
+  }
+
+  .active, .dropdown-menu .dropdown-item:active a:hover{
+    background-color:#E7E7E7!important; 
+  }
+
+  .dropdown-item{
+    color: #6D8092 !important; 
+  }
+
+  .dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{
+    background-color:#E7E7E7 !important; 
+  }
+
+  .nav-link:hover{
+    background-color:#E7E7E7 !important;
+   }
+
+  /* Images */
+  img{
+    width:30% !important;
+    height:50% !important;
+    margin:20px;
+  }
+  .active, .panel:hover{
+    border-color:#0BADA6;
+    border-style: solid; 
+    
+  }
+
+  #summary{
+    border-color: white;
+    background-color: white;
+  }
+  #visualizations{
+    border-color: white;
+    background-color: white;
+  }
+
+  
+
+
+  /* Title Class  */
+  .title{
+    color: #0BADA6;  
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder; 
+    padding-top: 25px; 
+  }
+  /* Paragraph Element */
+  p{
+  color: #6D8092;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px; 
+  }
+  /* Box Class */
+  .box {
+    margin-top: 60px; 
+    margin-bottom: 62px; 
+    padding: 10px 20px 15px; 
+    color:black;
+    background-color: white; 
+  
+  }
+  /* Table */
+  .table{
+    font-size: 15px; 
+    border-top-color: white !important; 
+  }
+  /* Footer */
+  footer{
+  background-color: #666666; 
+  border-top-style: solid; 
+  border-top-width: 5px; 
+  border-top-color: #0BADA6;
+  color: white; 
+  min-height: 55px; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px; 
+  text-align: center; 
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 15px; 
+  }
+
+
+  
