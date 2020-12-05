@@ -13,10 +13,10 @@
   
   
 Before we performed the ETL, we spent some time designing our db schema using QuickDBD.  Reference schema documentation for more details.  We determined that a relational     database would be more appropriate for this project and made the following assumptions:
-  - ISBN is a unique to every book
-  - Data sources are reliable
+  1) ISBN is a unique to every book
+  2) Data sources are reliable
   
-- We performed the ETL process on this:
+We performed the ETL process on this:
   - **Extract:**  
     -From the data sources indicated above, we were able to obtain csv files containing the information we needed.
     -We had to encode key files appropriately in order to read the csv files.  Please refer to the jupyter notebook for more specifics encoding used.
@@ -35,7 +35,7 @@ Before we performed the ETL, we spent some time designing our db schema using Qu
       -Create a ratings dataframe that merged data from the books dataframe and the nyt dataframe
       -Develop a boolean column to indicate whether or not the book was ever a NYT Bestseller book
       
-    -**Load** 
+   - **Load:** 
       -We chose the relational database schema for the following reasons:
         - The International Standard Book Number (ISBN) is a numeric commercial book identifier which is intended to be unique.
         - All our data sources contained ISBN data that we could leverage to join data for analysis and for referential integrity
