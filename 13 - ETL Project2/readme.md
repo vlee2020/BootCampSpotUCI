@@ -37,16 +37,17 @@ We performed the ETL process on this:
       
    - **Load:** 
       -We chose the relational database schema for the following reasons:
-        - The International Standard Book Number (ISBN) is a numeric commercial book identifier which is intended to be unique.
+        - The International Standard Book Number (ISBN) is a numeric commercial book identifier which is **intended** to be unique.
         - All our data sources contained ISBN data that we could leverage to join data for analysis and for referential integrity
            - Google, Goodreads, and NYT sources each had ISBN to reference
         - Our datasets were small, no file was greater than ~70K records
  
-- **Retrospective**
-  - As we were transforming the data, we found that the data in our source files were not reliable.  We found that ISBN were duplicated -AND- the book titles for similar   ISBN were different.  Most likely our source files were corrupted.  In the future, we would spend time upfront before even designing the schema to check the quality of the data especially our unique identifier!!!
+- **Retrospective / Challenges**
+  - As we were transforming the data, we found that the data in our source files were not reliable.  We discovered that ISBN were duplicated -AND- the book titles for similar   ISBN were different.  Most likely our source files were corrupted.  In the future, we would spend time upfront before even designing the schema to check the quality of the data especially our unique identifier!!!  
   - Selecting resource sources with known encoding information to read the files properly.  We spent alot of time guessing the appropriate encoding to use to read the files and found that occassionaly successful encoding for one team member didn't work for another.
-  - ISBN is tricky to convert in jupyter notebook into a string format; numbers represented in scientific format can easily be corrupted in csv files
-  - The assignment was a great educational experience. 
+  - ISBN is tricky to convert in jupyter notebook from an object to a string format; numbers represented in scientific format can easily be corrupted in csv files. 
+  - What else did we learn about ISBNs?  There doesn't seem to be one database containing every ISBN ever issued.  2 seemingly reliable sources that people turn to are [Google Books](https://developers.google.com/books/) and [WorldCat](https://www.worldcat.org/affiliate/tools?atype=wcapi) (which has over 2 billion titles and lets you search by ISBN.  Both these sources have APIs available for public usage.  Going here and leveraging these API's in the future is what we would do.  Also, ISBN was introduced in 1968.  Books published prior to them may not have ISBNs -AND- ISBN quality is also dependent on the publishing houses assigning ISBN numbers to their books and mistakes are often made.  Duplicates can also occur from manual user entries.  Did you know that there is an [ISBN Governance Agency](https://www.isbn-international.org/content/what-isbn) located in London? 
+  - The assignment was a great educational experience!
   
 
 
