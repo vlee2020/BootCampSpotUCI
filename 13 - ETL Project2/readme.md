@@ -20,6 +20,7 @@ Before we performed the ETL, we spent some time designing our db schema using Qu
 We performed the ETL process on this:
   - **Extract:**  
     -From the data sources indicated above, we were able to obtain csv files containing the information we needed.
+    
     -We had to encode key files appropriately in order to read the csv files.  Please refer to the jupyter notebook for more specifics encoding used.
     
   - **Transform:**  Our goal is to create two tables within our database: (1) books and (2) rating
