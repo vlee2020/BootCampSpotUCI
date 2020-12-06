@@ -24,22 +24,32 @@ We performed the ETL process on this:
   - **Transform:**  Our goal is to create two tables within our database: (1) books and (2) rating
   
     -Books Table:
-      -Upon checking value_counts, we learned of duplicate ISBN records in all our files which we dropped from the tables
-      -Extract and retitle specific fields from the csv into new dataframes for further transformation
-      -Merge google and goodreads data after preliminary transformations
-      -Because we had title and author information from both google and goodreads data extracts where some were not populated, we created conditional statements to create a        new author and title column where google data would be used as precedence over goodreads data if google data was available.
+    
+         -Upon checking value_counts, we learned of duplicate ISBN records in all our files which we dropped from the tables
+      
+         -Extract and retitle specific fields from the csv into new dataframes for further transformation
+      
+         -Merge google and goodreads data after preliminary transformations
+      
+         -Because we had title and author information from both google and goodreads data extracts where some were not populated, we created conditional statements to create a        new author and title column where google data would be used as precedence over goodreads data if google data was available.
      
     -Ratings Table:
-      -Drop duplicates from the NYT bestsellers extract
-      -Extract and retitle specific fields from the NYT bestsellers extract
-      -Create a ratings dataframe that merged data from the books dataframe and the nyt dataframe
-      -Develop a boolean column to indicate whether or not the book was ever a NYT Bestseller book
+    
+         -Drop duplicates from the NYT bestsellers extract
+      
+         -Extract and retitle specific fields from the NYT bestsellers extract
+      
+         -Create a ratings dataframe that merged data from the books dataframe and the nyt dataframe
+      
+         -Develop a boolean column to indicate whether or not the book was ever a NYT Bestseller book
       
    - **Load:** 
       -We chose the relational database schema for the following reasons:
+      
         - The International Standard Book Number (ISBN) is a numeric commercial book identifier which is **intended** to be unique.
-        - All our data sources contained ISBN data that we could leverage to join data for analysis and for referential integrity
-           - Google, Goodreads, and NYT sources each had ISBN to reference
+        
+        - All our data sources contained ISBN data that we could leverage to join data for analysis and for referential integrity.  Google, Goodreads, and NYT sources each had ISBN to reference
+           
         - Our datasets were small, no file was greater than ~70K records
  
 - **Retrospective / Challenges**
