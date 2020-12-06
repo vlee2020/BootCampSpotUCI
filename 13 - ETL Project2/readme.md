@@ -5,6 +5,7 @@
 **Background:** We wanted to create a db containing book titles and book ratings from various sources.  In the case of this initiative, we found book review data from google and goodreads on kaggle.  In addition to that we were able to find data on the NYT bestsellers (week counts) that we thought would be an interesting comparison point as well.  Our production database will ultimately compare two different data platforms (Google Books, Goodreads) to determine similarities and differences based on user ratings.
 
 **Data Sources:**
+
   https://www.kaggle.com/meetnaren/goodreads-best-books
   
   https://www.kaggle.com/bilalyussef/google-books-dataset
@@ -52,7 +53,7 @@ We performed the ETL process on this:
            
         - Our datasets were small, no file was greater than ~70K records
  
-- **Retrospective / Challenges**
+**Retrospective / Challenges**
   - As we were transforming the data, we found that the data in our source files were not reliable.  We discovered that ISBN were duplicated -AND- the book titles for similar   ISBN were different.  Most likely our source files were corrupted.  In the future, we would spend time upfront before even designing the schema to check the quality of the data especially our unique identifier!!!  
   - Selecting resource sources with known encoding information to read the files properly.  We spent alot of time guessing the appropriate encoding to use to read the files and found that occassionaly successful encoding for one team member didn't work for another.
   - ISBN is tricky to convert in jupyter notebook from an object to a string format; numbers represented in scientific format can easily be corrupted in csv files. 
