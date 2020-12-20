@@ -10,7 +10,7 @@ Files:  app.js  &  index.html
 
 Complete all of Level 1 criteria. Use multiple input tags and/or select dropdowns, write JavaScript code so the user can set multiple filters and search for UFO sightings using the following criteria based on the table columns.
 
-Files: app2.js * index2.html
+Files: app2.js & index2.html
 
 **Key Reference Links:**
 [Filtering](https://www.d3-graph-gallery.com/graph/basic_datamanipulation.html#filtering)
