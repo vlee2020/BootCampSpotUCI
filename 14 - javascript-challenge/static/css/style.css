@@ -96,9 +96,9 @@ select {
   position: relative;
   height: 550px;
   padding: 20px;
-  margin: 0;
+  margin: 40px;
   background: black;
-  background-image: url("../images/nasa.jpg");
+  background-image: url("../images/sighting.jpg");
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;

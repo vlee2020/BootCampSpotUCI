@@ -29,58 +29,42 @@ console.log(tableData);
     // });
 
 // Part 1: Solution #2  
-    // Refactor 1st solution to use Arrow Functions
-    // tableData.forEach((ufoSighting) => {
-    //     var row = tbody.append("tr");
-    //     Object.entries(ufoSighting).forEach(([key,value]) => {
-    //         // console.log(key,value);
-    //         var cell = row.append("td");
-    //         cell.text(value);
-    //     });
-    // });
+    //Refactor 1st solution to use Arrow Functions
+    tableData.forEach((ufoSighting) => {
+        var row = tbody.append("tr");
+        Object.entries(ufoSighting).forEach(([key,value]) => {
+            // console.log(key,value);
+            var cell = row.append("td");
+            cell.text(value);
+        });
+    });
 
 // Part 2: Use a date form in the HTML document and write JavaScript code that will listen for events and search through..
         // the date/time column to find rows that match user input.
 
-    var button = d3.select("#filter-btn");              // Select the button
-    var form = d3.select(form);                         // Select the form
+    var filterButton = d3.select("#filter-btn");              // Select the button
     
-    button.on("click", refreshTable);                       // Create event handler for button
-    form.on("submit", refreshTable);                        // Create event handler for form
-
-
-    // Create the event handler function "runEnter" for the form
-    function refreshTable() {
-        
-        d3.event.preventDefault();                          // Prevent the page from refreshing
-        var inputElement = d3.select("#datetime");          // Select the input element and get the raw HTML node
-        var inputValue = inputElement.property("value");    // Get the value property of the input element
+    filterButton.on("click", function() {                     // Create Event handler "filterButton"
+        d3.event.preventDefault();
     
-        console.log(inputValue);
+        var inputElement = d3.select("#datetime");
+        var inputValue = inputElement.property("value");
+        var filteredTable = tableData.filter(sighting => sighting.datetime === inputValue);
     
-        var filteredData = tableData.filter(ufoSighting => ufoSighting.datetime === inputValue);
-
-        console.log(filteredData);
-        
-        $
-        ("#ufo_table tr").remove();                        // Remove all the rows in the table
-        //Update table with filtered data
-        filteredData.forEach((ufoSighting) => {
+        // Repeat part1: solution 2 however this time reference the filteredTable variable created above
+        d3.selectAll("td").remove();                           // Be sure to remove existing data
+        filteredTable.forEach(function(sighting) {
             var row = tbody.append("tr");
-            Object.entries(ufoSighting).forEach(([key,value]) => {
-                // console.log(key,value);
+            Object.entries(sighting).forEach(function([key, value]) {
                 var cell = row.append("td");
                 cell.text(value);
             });
         });
-
-    };
-
-
+    });
+    
 
 // LEVEL 2 (Optional) 
         // Using multiple input tags and/or select dropdowns, write JavaScript code so that the
         // user can set multiple filters and search for UFO sightings using the following criteria
         // based on the talbe columns:  date/time, city, state, country, and/or shape
 
-    
