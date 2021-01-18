@@ -1,6 +1,5 @@
 ## D3 Times - Data Journalism and D3
 <br>
-<br>
 Main Objective:
 - Create a scatter plot between two of the data variables from the data.csv file using D3
 - Include state abbreviations in the circles
