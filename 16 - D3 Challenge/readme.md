@@ -7,6 +7,7 @@ Main Objective:
 - Leverage LiveServer or python -m http.server to run the visualization locally
 - Create a tooltip that is activated when you click on a specific plot and disappears when you hover away from it
 
+
 Useful Links: <br>
 https://www.d3indepth.com/scales/ <br>
 https://www.carlosrendon.me/unfinished_d3_book/d3_attr.html <br>
