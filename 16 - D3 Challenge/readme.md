@@ -5,5 +5,6 @@ Main Objective:
 - Include state abbreviations in the circles
 - Create and situate the axes and labels to the left and bottom of the chart
 - Leverage LiveServer or python -m http.server to run the visualization locally
+- Create a tooltip that is activated when you click on a specific plot and disappears when you hover away from it
 
 
