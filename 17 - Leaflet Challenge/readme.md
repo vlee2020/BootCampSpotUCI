@@ -7,8 +7,8 @@ Objective:
 - Create data markers that reflect the magnitude of the earthquake by their size and the depth of the earthquake by color.  Earthquakes with higher magnitudes should appear larger and earthquakes with greater depth should appear darker in color.
 - Include popups that provide additional information about the earthquake when a marker is clicked.
 - Create a legend that will provide context for your map data.
-<br>
-![Level 1 Submission](image.png)
-<br>
+
+![Level 1 Submission](image.jpg)
+
 Useful Links:
 https://codepen.io/haakseth/pen/KQbjdO
