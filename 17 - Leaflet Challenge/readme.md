@@ -8,7 +8,7 @@ Objective:
 - Include popups that provide additional information about the earthquake when a marker is clicked.
 - Create a legend that will provide context for your map data.
 
-![Level 1 Submission](image.jpg)
+![Level 1 Submission](https://github.com/vlee2020/UCI_Homework/blob/master/17%20-%20Leaflet%20Challenge/image.JPG)
 
 Useful Links:
 https://codepen.io/haakseth/pen/KQbjdO
