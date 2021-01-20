@@ -22,7 +22,7 @@ function createFeatures(earthquakeData) {
         {radius: getRadius(feature.properties.mag),
         fillColor: getColor(feature.properties.mag),
         fillOpacity: .6,
-        color: "#000",
+        color: "white",
         stroke: true,
         weight: .8
     })
@@ -54,28 +54,30 @@ function createMap(earthquakes) {
     layers: [lightmap, earthquakes]
   });
 
-
-  // Add legend
+  //set up the legend
   var legend = L.control({position: 'bottomright'});
+  legend.onAdd = function() {
+  
+  //create a legend element
+  var div = L.DomUtil.create('div', 'legend');
 
-    legend.onAdd = function () {
-  
-      var div = L.DomUtil.create('div', 'info legend'),
-          labels = ['<strong>Magnitudes</strong>'],
-          magnitudes = [0, 1, 2, 3, 4, 5];
-  
-      for (var i = 0; i < magnitudes.length; i++) {
-          div.innerHTML +=
-            labels.push(
-              '<i class = "square" i style="background:' + getColor(magnitudes[i] + 1) + '"></i> ' + 
-      + magnitudes[i] + (magnitudes[i + 1] ? ' - ' + magnitudes[i + 1] + '<br>' : ' + '));
-      }
-  
-      return div;
+  //create labels and values to find colors
+  var labels = ["0-1", "1-2", "2-3", "3-4", "4-5", "5+"];
+  var grades = [0.5, 1.5, 2.5, 3.5, 4.5, 5.5];
+
+  //create legend html
+  div.innerHTML = '<div><strong>Magnitude</strong></div>';
+  for(var i = 0; i < grades.length; i++) {
+      div.innerHTML += '<i style = "background:' + getColor(grades[i]) + '">&nbsp;</i>&nbsp;&nbsp;'
+      + labels[i] + '<br/>';
+    };
+    return div;
   };
-  
+
+  //add legend to map
   legend.addTo(myMap);
-  }
+}
+
 
 //Create color range for the circle diameter 
 function getColor(magnitude) {
@@ -95,8 +97,9 @@ function getColor(magnitude) {
      return "black"}
  };  
 
-//Change the magnitude of the earthquake by a factor of 15,000 for the radius of the circle. 
+ 
+//Change the magnitude of the earthquake by a factor of 20,000 for the radius of the circle. 
 function getRadius(value){
-  return value*15000
+  return value*20000
 }
   
